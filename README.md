@@ -12,7 +12,7 @@ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 10
 certbot certonly --standalone --preferred-challenges http
 
 # Public key and private key material generated in folder:
-/etc/letsencrypt/live/<hostname>/
+/etc/letsencrypt/live/\<hostname>/
 
 # Public key file:
 /etc/letsencrypt/live/<hostname>/fullchain.pem
