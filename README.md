@@ -15,16 +15,16 @@ certbot certonly --standalone --preferred-challenges http
 /etc/letsencrypt/live/\<hostname>/
 
 # Public key file:
-/etc/letsencrypt/live/<hostname>/fullchain.pem
+/etc/letsencrypt/live/\<hostname>/fullchain.pem
 
 # Private key file:
-/etc/letsencrypt/live/<hostname>/privkey.pem
+/etc/letsencrypt/live/\<hostname>/privkey.pem
 
 # optionally, encrypt private key with password (sometimes required when importing into 3rd party solutions):
-openssl rsa -des3 -in /etc/letsencrypt/live/<hostname>/privkey.pem -out privkey.key
+openssl rsa -des3 -in /etc/letsencrypt/live/\<hostname>/privkey.pem -out privkey.key
 
 # or create a keypair.pfx pass protected archive, also sometimes required by applications:
-openssl pkcs12 -export -out keypair.pfx -inkey /etc/letsencrypt/live/<hostname>/privkey.pem -in /etc/letsencrypt/live/<hostname>/fullchain.pem
+openssl pkcs12 -export -out keypair.pfx -inkey /etc/letsencrypt/live/\<hostname>/privkey.pem -in /etc/letsencrypt/live/\<hostname>/fullchain.pem
 
 # the final result is the private key (privkey.pem) and public material (fullchain.pem), ready to be imported into a web server or application which will present this certificate identity.
 
